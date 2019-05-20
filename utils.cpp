@@ -20,9 +20,9 @@ void hexagon(Turtle *turtle){
     turtle->setAngle(0);
 
     for (int i = 0; i < 6; i++){
-        a = turtle->getPosition();
+        a = Point{static_cast<int>(turtle->getPositionX()), static_cast<int>(turtle->getPositionY())};
         turtle->forward(dist);
-        b = turtle->getPosition();
+        b = Point{static_cast<int>(turtle->getPositionX()), static_cast<int>(turtle->getPositionY())};
         turtle->drawLine(a, b);
         turtle->left(PI/3);
     }
@@ -36,10 +36,11 @@ void randomWalk(Turtle *turtle, int steps) {
     for (int i = 0; i < steps; i++){
         float dist = randRange(0, 50);
         float angle = randRange(-PI, PI);
-        a = turtle->getPosition();
+
+        a = Point{static_cast<int>(turtle->getPositionX()), static_cast<int>(turtle->getPositionY())};
         turtle->left(angle);
         turtle->forward(dist);
-        b = turtle->getPosition();
+        b = Point{static_cast<int>(turtle->getPositionX()), static_cast<int>(turtle->getPositionY())};
         turtle->drawLine(a, b);
     }
 }
@@ -50,9 +51,9 @@ void koch(Turtle *turtle, float length, int level){
         Point b;
 
     if (level == 0){
-        a = turtle->getPosition();
+        a = Point{static_cast<int>(turtle->getPositionX()), static_cast<int>(turtle->getPositionY())};
         turtle->forward(length);
-        b = turtle->getPosition();
+        b = Point{static_cast<int>(turtle->getPositionX()), static_cast<int>(turtle->getPositionY())};
         turtle->drawLine(a, b);
         
     }

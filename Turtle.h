@@ -8,8 +8,7 @@ using namespace Graph_lib;
 
 class Turtle {
 protected:
-    Point pos; // current position
-    //float x, y; should implement with int x, y instead, but too much work rn.
+    float x, y; //positon
     float angle;
     float lineWidth;
     Color color;
@@ -22,7 +21,8 @@ public:
 
     void clear(); //maybe not needed
     // geters:
-    Point getPosition() { return this->pos; };
+    float getPositionX() { return this->x; };
+    float getPositionY() { return this->y; };
     float getAngle() { return this->angle; };
     //int getWidth() { return this->width; };
     //int getHeight(){ return this->height; };
@@ -30,7 +30,7 @@ public:
     Simple_window* getWindow() { return swin; };
 
     //seters:
-    void setPosition(Point point);
+    void setPosition(float pos_x, float pos_y);
     void setAngle(float ang);
     void setColor(Color c) { this->color = c; };
     void setLineWidth(float lw);

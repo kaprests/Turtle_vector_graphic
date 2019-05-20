@@ -2,7 +2,8 @@
 
 Turtle::Turtle(Simple_window* win, Color c): 
     swin(win),
-    pos(Point{win->x_max()/2, win->y_max()/2 }),
+    x(win->x_max()/2), 
+    y(win->y_max()/2),
     angle(0.0),
     lineWidth(1.0),
     color(c)
@@ -19,8 +20,9 @@ void Turtle::drawLine(Point p1, Point p2){
 }
 
 
-void Turtle::setPosition(Point point){
-    this->pos = point;
+void Turtle::setPosition(float pos_x, float pos_y){
+    this->x = pos_x;
+    this->y = pos_y;
 }
 
 
@@ -30,9 +32,8 @@ void Turtle::setAngle(float ang){
 
 
 void Turtle::forward(float distance){
-    float x = (this->pos).x + distance * cos(this->angle);
-    float y = (this->pos).y + distance * sin(this->angle);
-    this->pos = Point{static_cast<int>(x), static_cast<int>(y)};
+    this->x = this->x + distance * cos(this->angle);
+    this->y = this->y + distance * sin(this->angle);
 }
 
 
