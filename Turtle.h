@@ -19,13 +19,10 @@ public:
     //constructor:
     Turtle(Simple_window* win, Color c);
 
-    void clear(); //maybe not needed
     // geters:
     float getPositionX() { return this->x; };
     float getPositionY() { return this->y; };
     float getAngle() { return this->angle; };
-    //int getWidth() { return this->width; };
-    //int getHeight(){ return this->height; };
     Color getColor() { return this->color; };
     Simple_window* getWindow() { return swin; };
 
