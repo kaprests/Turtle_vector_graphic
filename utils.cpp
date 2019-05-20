@@ -72,6 +72,7 @@ void koch(Turtle *turtle, float length, int level){
 
 
 void snowFlake(Turtle* turtle, float length, int level){
+    turtle->setPosition((turtle->getWindow())->x_max()/4, 3*(turtle->getWindow())->y_max()/4);
     koch(turtle, length, level);
     turtle->setAngle(2*PI/3);
     koch(turtle, length, level);

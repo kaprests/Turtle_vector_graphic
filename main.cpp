@@ -19,6 +19,6 @@ int main(){
     cout << "level: ";
     cin >> levels;
     cout << endl;
-    snowFlake(turtle_pointer, 300.0, levels);
+    snowFlake(turtle_pointer, 400.0, levels);
     window.wait_for_button();
 }
