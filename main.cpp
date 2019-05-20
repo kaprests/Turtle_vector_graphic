@@ -15,6 +15,10 @@ int main(){
     Turtle* turtle_pointer = &turtle;
     //hexagon(turtle_pointer);
     //randomWalk(turtle_pointer, 150);
-    snowFlake(turtle_pointer, 300.0, 5);
+    int levels{0};
+    cout << "level: ";
+    cin >> levels;
+    cout << endl;
+    snowFlake(turtle_pointer, 300.0, levels);
     window.wait_for_button();
 }
